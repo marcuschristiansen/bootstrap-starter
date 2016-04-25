@@ -4,8 +4,8 @@ var gulp = require('gulp'), 
     bower = require('gulp-bower');
 
 var config = {
- 	sassPath: './assets/sass',
- 	bowerDir: './bower_components' 
+ 	sassPath: './assets',
+ 	bowerDir: './assets/bower_components' 
 };
 
 /* Tasks */
@@ -23,7 +23,8 @@ gulp.task('css', function() { 
     return sass(config.sassPath + '/style.scss', {
              style: 'compressed',
              loadPath: [
-                 './assets/sass',
+                 './assets',
+				config.bowerDir + '/normalize-scss/sass',
                  config.bowerDir + '/bootstrap-sass/assets/stylesheets',
                  config.bowerDir + '/font-awesome/scss',
              ]
